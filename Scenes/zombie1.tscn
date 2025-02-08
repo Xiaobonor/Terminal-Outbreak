@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://dd7bpq766iqt6"]
+[gd_scene load_steps=37 format=3 uid="uid://dd7bpq766iqt6"]
 
 [ext_resource type="Texture2D" uid="uid://dmqmas3pabvuw" path="res://Assets/zombie/Zombie_1/Idle.png" id="1_5wkls"]
 [ext_resource type="Texture2D" uid="uid://cejl7apc4w3y1" path="res://Assets/zombie/Zombie_1/Attack.png" id="1_6w3cp"]
+[ext_resource type="Script" path="res://zombie_1.gd" id="1_t07el"]
 [ext_resource type="Texture2D" uid="uid://vqkxtb1cpj0y" path="res://Assets/zombie/Zombie_1/Walk.png" id="2_n0cmi"]
 [ext_resource type="Texture2D" uid="uid://ku2q7n0dpoxa" path="res://Assets/zombie/Zombie_1/Dead.png" id="2_y4cd1"]
 [ext_resource type="Texture2D" uid="uid://dlda0thfroamr" path="res://Assets/zombie/Zombie_1/Hurt.png" id="3_v3hw1"]
@@ -101,14 +102,6 @@ region = Rect2(128, 0, 128, 128)
 atlas = ExtResource("2_n0cmi")
 region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vhuj8"]
-atlas = ExtResource("2_n0cmi")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8g6vr"]
-atlas = ExtResource("2_n0cmi")
-region = Rect2(512, 0, 128, 128)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_p38x5"]
 atlas = ExtResource("2_n0cmi")
 region = Rect2(640, 0, 128, 128)
@@ -148,7 +141,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ap6ci")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -168,7 +161,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_thd0y")
 }],
 "loop": true,
-"name": &"Dead",
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -185,7 +178,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_vjwug")
 }],
 "loop": true,
-"name": &"Hurt",
+"name": &"hurt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -208,7 +201,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_cecl6")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -220,12 +213,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ns4bb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vhuj8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8g6vr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p38x5")
@@ -243,22 +230,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_kmvjf")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"walk",
 "speed": 9.0
 }]
 
 [node name="Zombie1" type="CharacterBody2D"]
+scale = Vector2(1.7034, 1.7034)
+script = ExtResource("1_t07el")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -10)
-scale = Vector2(-2.04754, 4.22599)
+position = Vector2(0.587063, -9.98006)
+scale = Vector2(-1.7411, 3.90992)
 shape = SubResource("CircleShape2D_bhwsa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -21)
 scale = Vector2(0.33743, 0.33743)
 sprite_frames = SubResource("SpriteFrames_g52c1")
-animation = &"Dead"
-frame = 3
-frame_progress = 0.437499
+animation = &"hurt"
+frame_progress = 0.703278
 metadata/_edit_lock_ = true

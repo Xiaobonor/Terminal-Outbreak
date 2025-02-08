@@ -138,11 +138,14 @@ _data = {
 "walk_up": SubResource("Animation_q6qd1")
 }
 
-[node name="Player" type="CharacterBody2D"]
 collision_mask = 16
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.760754, 0.760754)
 script = ExtResource("1_kgryn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.8147e-06, -19.7173)
+scale = Vector2(1.11304, 2.52247)
 shape = SubResource("CircleShape2D_6t1r7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -150,6 +153,7 @@ texture_filter = 1
 position = Vector2(0, -20)
 texture = ExtResource("1_m204s")
 hframes = 21
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -158,8 +162,6 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
-editor_draw_limits = true
-script = ExtResource("3_f1v7s")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_vltss")
@@ -171,3 +173,4 @@ script = ExtResource("4_3pfkb")
 script = ExtResource("5_eyg82")
 
 [node name="Gun" parent="." instance=ExtResource("6_4poyp")]
+metadata/_edit_lock_ = true

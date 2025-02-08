@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://0fngr8l5db57"]
 
 [ext_resource type="PackedScene" uid="uid://bbb4e4d4kiff0" path="res://Scenes/player.tscn" id="1_jdgux"]
-[ext_resource type="PackedScene" uid="uid://cyjvmnoqgdqbo" path="res://Scenes/bullet.tscn" id="2_lnod4"]
+[ext_resource type="Script" path="res://Scenes/zombie_spawner.gd" id="3_a01jb"]
 [ext_resource type="PackedScene" uid="uid://dn1oduqcg3kf5" path="res://Tile Maps/operation-room.tscn" id="3_vdysk"]
 
 [node name="Playground" type="Node2D"]
@@ -13,4 +13,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 [node name="Player" parent="." instance=ExtResource("1_jdgux")]
 position = Vector2(218, 139)
 
-[node name="bullet" parent="." instance=ExtResource("2_lnod4")]
+[node name="Operation-room" parent="." instance=ExtResource("3_vdysk")]
+z_index = -1
+
+[node name="ZombieSpawner" type="Node2D" parent="."]
+script = ExtResource("3_a01jb")
