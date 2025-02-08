@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbb4e4d4kiff0"]
+[gd_scene load_steps=17 format=3 uid="uid://bbb4e4d4kiff0"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_kgryn"]
 [ext_resource type="Texture2D" uid="uid://c88njcbi8a0a3" path="res://Assets/player/ExamplePlayerSprite.png" id="1_m204s"]
+[ext_resource type="Script" path="res://Player/Scripts/camera.gd" id="3_f1v7s"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_vltss"]
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_3pfkb"]
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_eyg82"]
@@ -138,6 +139,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 16
 script = ExtResource("1_kgryn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -156,6 +158,8 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("3_f1v7s")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_vltss")
