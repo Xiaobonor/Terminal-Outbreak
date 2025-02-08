@@ -6,6 +6,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
+@onready var gun: Gun = $Gun
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,12 +16,18 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	pass
+	
+	if Input.is_action_just_pressed("fire"):
+		# 以滑鼠指向作為射擊方向，也可自行設定方向邏輯
+		var mouse_pos = get_global_mouse_position()
+		var shoot_direction = (mouse_pos - gun.global_position).normalized()
+		gun.fire(shoot_direction)
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	pass
 

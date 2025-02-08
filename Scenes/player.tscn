@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbb4e4d4kiff0"]
+[gd_scene load_steps=16 format=3 uid="uid://bbb4e4d4kiff0"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_kgryn"]
-[ext_resource type="Texture2D" uid="uid://c88njcbi8a0a3" path="res://Player/Sprites/ExamplePlayerSprite.png" id="1_m204s"]
+[ext_resource type="Texture2D" uid="uid://c88njcbi8a0a3" path="res://Assets/player/ExamplePlayerSprite.png" id="1_m204s"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_vltss"]
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_3pfkb"]
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_eyg82"]
+[ext_resource type="PackedScene" uid="uid://vbsvn07uye5w" path="res://Scenes/gun.tscn" id="6_4poyp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t1r7"]
 
@@ -161,3 +162,5 @@ script = ExtResource("4_3pfkb")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_eyg82")
+
+[node name="Gun" parent="." instance=ExtResource("6_4poyp")]
