@@ -11,14 +11,14 @@ func _ready() -> void:
 		new_muzzle.name = "Muzzle"
 		add_child(new_muzzle)
 		muzzle = new_muzzle
+		
+	# 調整 muzzle 位置到槍口前方
+	muzzle.position = Vector2(20, 0)
 
 # Shoot bullet
 func fire(direction: Vector2) -> void:
-	print("test")
 	var bullet = BulletScene.instantiate()
-	# Set bullet position
-	bullet.position = muzzle.global_position
-	# Shoot bullet
+	bullet.global_position = muzzle.global_position
 	bullet.shoot(direction)
-	# Add bullet to scene tree
-	get_tree().get_root().add_child(bullet)
+	# 將子彈加入到最上層場景
+	get_tree().current_scene.add_child(bullet)

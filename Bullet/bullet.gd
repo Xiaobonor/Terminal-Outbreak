@@ -20,6 +20,6 @@ func _physics_process(delta: float) -> void:
 
 # 當子彈碰到其他物體時
 func _on_body_entered(body: Node2D) -> void:
-	if body is Zombie1:  # 檢查是否擊中殭屍
+	if body is Zombie:  # 檢查是否擊中殭屍
 		body.take_damage(damage)
 		queue_free()  # 子彈消失

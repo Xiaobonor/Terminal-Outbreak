@@ -1,7 +1,7 @@
 extends Node2D
 
 # 預載入殭屍場景，請確認路徑正確
-const ZombieScene = preload("res://scenes/zombie1.tscn")
+const ZombieScene = preload("res://Scenes/zombie1.tscn")
 
 func _ready() -> void:
 	# 遊戲載入完成後生成 3 隻殭屍

@@ -13,7 +13,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 [node name="Player" parent="." instance=ExtResource("1_jdgux")]
 position = Vector2(218, 139)
 
-[node name="Operation-room" parent="." instance=ExtResource("3_vdysk")]
+[node name="Operation-room2" parent="." instance=ExtResource("3_vdysk")]
 z_index = -1
 
 [node name="ZombieSpawner" type="Node2D" parent="."]
